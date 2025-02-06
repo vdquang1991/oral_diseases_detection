@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block pagetitle %}
+Supplement Market
+{% endblock pagetitle %}
+
+{% block body %}
+
+<br>
+<div class="row mb-5 text-center text-white">
+    <div class="col-lg-10 mx-auto">
+        <h1 class="display-4" style="padding-top: 2%;font-weight: 400;color: rgb(4, 54, 4);"><b>🛒Thuốc bổ sung🛒</b></h1>
+        <p class="lead" style="font-weight: 500;color: black;">Mua thuốc và thực phẩm bổ sung ở đây</p>
+    </div>
+</div>
+<div class="row p-3">
+    {% for index in range(0,supplement_name | length) %}
+    {% if index != 4 %}
+    <div class="col">
+        <div class=" p-5 bg-white shadow rounded-lg" style="height: 95%;">
+        <center>
+            {% if index==0 or index==3 or index==70 or index==110 or index==150 or index==180 or index==200 or
+            index==230 or index==240 or index==250 or index==280 or index==380 %}
+            <h5>Dụng cụ y tế<b style="color: green;"> (Thiết bị):</b></h5>
+            {% else %}
+            <h5>Thuốc<b style="color: red;"> (Thực phẩm):</b></h5>
+            {% endif %}
+            <br>
+            <img src={{supplement_image[index]}} width="200" height="250">
+            <br>
+            <br>
+            <h6>{{disease[index]}}</h6>
+            <p>{{supplement_name[index]}}</p>
+
+            <a target="_blank" href={{buy[index]}}><button type="button" class="btn btn-success"
+                    style="background-color: #05380b;">Mua sản phẩm</button></a>
+        </center>
+    </div>
+</div>
+{% endif %}
+{% endfor %}
+</div>
+{% endblock body %}

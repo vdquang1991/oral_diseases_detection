@@ -1,0 +1,88 @@
+<html>
+{% extends 'base.html' %}
+{% block pagetitle %}
+AI Engine
+{% endblock pagetitle %}
+
+{% block body %}
+<div>
+    <div class="container">
+        <!-- For demo purpose -->
+        <div class="row mb-5 text-center text-white">
+            <div class="col-lg-10 mx-auto">
+                <h1 class="display-4" style="padding-top: 2%;font-weight: 400;color: rgb(4, 54, 4);"><b>🍀Công cụ AI🍀</b></h1>
+                <p class="lead" style="font-weight: 500;color: black;">Hãy để công cụ AI giúp bạn phân tích tình trạng răng miệng của bạn</p>
+            </div>
+        </div>
+        <!-- End -->
+        <div class="row ">
+            <div class="col mx-auto">
+                <div class="p-5 bg-white shadow rounded-lg" style="height: 95%;">
+
+                    <h5><b>Tại sao cần phải kiểm tra tình trạng răng miệng thường xuyên</b></h5>
+                    <p>Kiểm tra định kỳ giúp phát hiện kịp thời các bệnh như sâu răng, viêm nướu, nha chu hoặc mòn men răng trước khi chúng trở nên nghiêm trọng.
+                        Các vấn đề răng miệng không được điều trị có thể dẫn đến các bệnh nghiêm trọng hơn, như nhiễm trùng, mất răng hoặc thậm chí ảnh hưởng đến sức khỏe tổng thể (bệnh tim mạch, tiểu đường).
+                        Thông thường, nên kiểm tra răng miệng định kỳ 6 tháng/lần để đảm bảo sức khỏe răng miệng luôn được bảo vệ tốt nhất.
+                    </p>
+                </div>
+            </div>
+            <div class="col mx-auto">
+                <div class="p-5 bg-white shadow rounded-lg" style="height: 95%;">
+<!--                    <img-->
+<!--                        src="https://www.pngjoy.com/pngl/250/4840262_plants-png-indoors-tropical-plant-png-hd-png.png "-->
+<!--                        height="300" alt="" width="200" class="d-block mx-auto mb-4 rounded-pill">-->
+
+                    <!-- Default bootstrap file upload-->
+
+                    <form action="/submit" method="POST" enctype="multipart/form-data">
+                        <div class="custom-file overflow-hidden mb-4">
+                            <input type="file" id="actual-btn" hidden name="image" />
+                            <label for="actual-btn">Chọn File</label>
+                            <span id="file-chosen">Chưa có file được chọn</span>
+                        </div>
+
+                        <!-- End -->
+
+                        <h6 class="text-center mb-4 text-muted">
+                            Chỉ cần tải hình ảnh chụp khoang miệng của bạn lên và xem sự kỳ diệu của AI.
+                        </h6>
+
+                        <!-- Custom bootstrap upload file-->
+                        <center>
+                            <a class="mx-2"><button type="submit" class="btn btn-outline-success">Submit</button></a>
+                        </center>
+                    </form>
+                    <!-- End -->
+
+                </div>
+            </div>
+            <div class="col mx-auto">
+                <div class="p-5 bg-white shadow rounded-lg" style="height: 95%;">
+                    <h5><b>Phòng ngừa bệnh về răng theo các bước dưới đây:</b></h5>
+                    <ol>
+                        <li>Vệ sinh răng miệng đúng cách.</li>
+                        <li>Chế độ ăn uống hợp lý.</li>
+                        <li>Kiểm tra và chăm sóc định kỳ.</li>
+                        <li>Làm sạch cao răng.</li>
+                        <li>Tránh thói quen có hại.</li>
+                        <li>Giữ miệng sạch sẽ cả ngày</li>
+                    </ol>
+                    <a target="_blank" href="https://nhakhoahanoithainguyen.com/"
+                        class="mx-2"><button type="button" class="btn btn-outline-success">Thêm thông tin</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const actualBtn = document.getElementById('actual-btn');
+
+    const fileChosen = document.getElementById('file-chosen');
+
+    actualBtn.addEventListener('change', function () {
+        fileChosen.textContent = this.files[0].name
+    })
+</script>
+
+{% endblock body %}
